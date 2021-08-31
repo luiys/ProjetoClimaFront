@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './reducers/authReducer'
 import cadastroReducer from './reducers/cadastroReducer'
+import homeReducer from './reducers/homeReducer'
 
 const store = configureStore({
     reducer: {
         cadastro: cadastroReducer,
-        auth: authReducer
+        auth: authReducer,
+        home: homeReducer,
     },
 })
 
