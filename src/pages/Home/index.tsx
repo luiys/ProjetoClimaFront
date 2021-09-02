@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
         return (
             <>
-                <h1>Home</h1>
+                <h1>LG & DG Weather</h1>
 
                 <input type="text" ref={search} />
                 <button onClick={searchFn}>Search</button>
@@ -37,6 +37,8 @@ const Home: React.FC = () => {
                         <p>{data!.main.temp_max}</p>
                     </>
                 }
+
+                {/* //TODO: Histórico de ultimas pesquisas */}
 
                 {SHOW_NO_DATA && <p>Pesquise alguma cidade, aqui irá aparecer seu clima atual</p>}
 
