@@ -2,16 +2,19 @@ import React, { useCallback } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/reducers/authReducer';
-import { box, container, SignInSchema, mockUsers } from './constantes';
+import { box, container, SignInSchema } from './constantes';
+import logar from './scripts/logar';
 
 
 const Login: React.FC = () => {
 
     const dispatch = useDispatch()
 
-    const onSubmit = useCallback((values: {email: string, senha: string}) => {
-        const user = mockUsers.find(({email, senha}) => email === values.email && senha === values.senha)
-        if(!!user) dispatch(logIn(user))
+    const onSubmit = useCallback(async (values: { email: string, senha: string }) => {
+        try {
+            const result = await logar(values)
+            !!result ? dispatch(logIn(result)) : alert('Usuário ou senha inválidos')
+        } catch (error) { alert('Erro') }
     }, [dispatch])
 
     return (
