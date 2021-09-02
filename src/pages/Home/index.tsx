@@ -7,10 +7,11 @@ import getWheater from './scripts/getWheater';
 const Home: React.FC = () => {
 
     const { apiData } = useAppSelector(state => state.home);
+    const { data } = apiData;
     const dispatch = useDispatch();
     const search = useRef<HTMLInputElement>(null);
     const userLogOut = useCallback(() => dispatch(logOut()), [dispatch])
-    const searchFn = useCallback(() => {getWheater(search.current?.value!, dispatch)}, [dispatch])
+    const searchFn = useCallback(() => { getWheater(search.current?.value!, dispatch) }, [dispatch])
 
     try {
 
@@ -27,8 +28,16 @@ const Home: React.FC = () => {
                 <button onClick={searchFn}>Search</button>
 
                 {SHOW_LOADING && <p>Loading...</p>}
+                
                 {SHOW_ERROR && <p>Error</p>}
-                {SHOW_DATA && <p>{apiData.data!.main.temp}</p>}
+
+                {SHOW_DATA &&
+                    <>
+                        <p>{data!.main.temp}</p>
+                        <p>{data!.main.temp_max}</p>
+                    </>
+                }
+
                 {SHOW_NO_DATA && <p>Pesquise alguma cidade, aqui irá aparecer seu clima atual</p>}
 
                 <button onClick={userLogOut}> LogOut </button>
