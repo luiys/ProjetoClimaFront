@@ -4,13 +4,22 @@ import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
 import { redirectToLogin } from '../../redux/reducers/cadastroReducer';
-import {box, container, SignupSchema} from './constantes'
+import { box, container, SignupSchema } from './constantes';
+import cadastar from './scripts/cadastar';
 
 const Cadastro: React.FC = () => {
 
     const { redirect } = useAppSelector(state => state.cadastro);
     const dispatch = useDispatch()
-    const handleSubmit = useCallback(() => { dispatch(redirectToLogin(true)) }, [dispatch])
+
+    const handleSubmit = useCallback(async (values) => {
+
+        try {
+            const sucess = await cadastar(values)
+            sucess ? dispatch(redirectToLogin(true)) : alert('Erro ao cadastrar')
+        } catch (error) {console.log(error);}
+
+    }, [dispatch])
 
     return (
         <>
@@ -19,7 +28,7 @@ const Cadastro: React.FC = () => {
                     <div style={box}>
 
                         <Formik
-                            initialValues={{ nome:'', email:'', senha:'', confirmarSenha:'' }}
+                            initialValues={{ nome: '', email: '', senha: '', confirmarSenha: '' }}
                             onSubmit={handleSubmit}
                             validationSchema={SignupSchema}
                         >

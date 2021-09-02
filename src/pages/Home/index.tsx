@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     const dispatch = useDispatch();
     const search = useRef<HTMLInputElement>(null);
     const userLogOut = useCallback(() => dispatch(logOut()), [dispatch])
-    const searchFn = useCallback(() => {getWheater(search.current?.value!, dispatch)}, [])
+    const searchFn = useCallback(() => {getWheater(search.current?.value!, dispatch)}, [dispatch])
 
     try {
 

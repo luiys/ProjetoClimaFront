@@ -27,7 +27,11 @@ export const authReducer = createSlice({
             state.isLogged = true
             ls.setObject('user', action.payload)
         },
-        logOut: () => initialState
+        logOut: (state) => {
+            ls.remove('user')
+            state.user = null
+            state.isLogged = false
+        } 
     }
 })
 

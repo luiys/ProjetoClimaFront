@@ -13,7 +13,7 @@ const MainRoute: React.FC = () => {
 
     useEffect(() => {
         const user = ls.getObject('user') as User;
-        if (!!user) dispatch(logIn(user))
+        if (!!user && !!user.id) dispatch(logIn(user))
     }, [dispatch])
 
     return isLogged ? <AppRoute /> : <LoginRoute />;
