@@ -1,5 +1,6 @@
 export interface BoxItemProps {
     background?: boolean,
+    theme?: string,
 }
 
 export interface BoxClimaProps {

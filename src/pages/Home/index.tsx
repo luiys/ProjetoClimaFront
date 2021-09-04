@@ -22,9 +22,15 @@ const Home: React.FC = () => {
     const { apiData } = useAppSelector(state => state.home)
     const { data } = apiData
     const dispatch = useDispatch()
-    const search = useRef<HTMLInputElement>(null);
-    const userLogOut = useCallback(() => dispatch(logOut()), [dispatch])
-    const searchFn = useCallback(() => { getWheater(search.current?.value!, dispatch) }, [dispatch])
+    const search = useRef<HTMLInputElement>(null)
+
+    const userLogOut = useCallback(() => {
+        dispatch(logOut())
+    }, [dispatch])
+
+    const searchFn = useCallback(() => { 
+        getWheater(search.current?.value!, dispatch)
+    }, [dispatch])
 
     const { theme, setTheme } = useTheme()
 
@@ -78,19 +84,24 @@ const Home: React.FC = () => {
 
                 <ul id = "homeContainer">
 
-                    <Box.Item> MAPA </Box.Item>
+                    <Box.Item> MAPA // Pegar localização atual e apresentar aqui </Box.Item>
 
                     <Box.Item background>
-                        {SHOW_LOADING && <Dots color = "grey" />}
+
+                        {SHOW_LOADING && <div className = "homeBoxLoadContainer"><Dots color = "grey" size = {64} /></div>}
                     
-                        {SHOW_ERROR && <p> {search.current?.value!} não foi encontrada :/ </p>}
+                        {SHOW_ERROR && (
+                            <div className = "homeBoxErrorContainer">
+                                <h3 className = "error"> {search.current?.value! ? `${search.current?.value!} não tem clima :(` : 'Pesquise uma cidade e seu clima aparecerá aqui!'} </h3>
+                            </div>
+                        )}
 
                         {SHOW_DATA && <Box.Clima current = {data!.main.temp} max = {data!.main.temp_max} min = {data!.main.temp_min} />}
 
-                        {SHOW_NO_DATA && <p>Pesquise uma cidade e seu clima aparecerá aqui! </p>}
+                        {SHOW_NO_DATA && <p> Pesquise uma cidade e seu clima aparecerá aqui! </p>}
                     </Box.Item>
 
-                    <Box.Item background> Histórico e opções </Box.Item>
+                    <Box.Item theme = 'blue'> Histórico e opções </Box.Item>
 
                 </ul>
             </div>

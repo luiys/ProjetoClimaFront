@@ -16,11 +16,15 @@
     padding: 16px;
     background-color: var(--color-layout-foreground);
 
+    transition: $transition-theme;
+
     #homeHeader {
         width: 100%;
         border-radius: 32px;
         background-color: var(--color-theme-colors-p);
         box-shadow: $color-box-shadow-p;
+
+        transition: $transition-theme;
 
         #homeHeaderContainer {
             display: flex;
@@ -171,10 +175,45 @@
             align-items: center;
             padding: 32px;
             border-radius: 32px;
+
+            transition: $transition-theme;
             
             &.background {
                 background-color: var(--color-layout-s);
                 box-shadow: $color-box-shadow-p;
+            }
+
+            &.color-mode {
+                background-color: var(--color-theme-colors-p);
+                box-shadow: $color-box-shadow-p;
+            }
+
+            .homeBoxLoadContainer {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .homeBoxErrorContainer {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                h3 {
+                    color: bar(--color-txt-p);
+                    font-size: 64px;
+                    text-align: center;
+
+                    &.error {
+                        color: $color-theme-status-error-p;
+                    }
+
+                }
+
             }
 
             .homeBoxClimaContainer {
