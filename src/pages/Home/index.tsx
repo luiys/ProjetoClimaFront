@@ -22,9 +22,9 @@ const Home: React.FC = () => {
 
         return (
             <>
-                <h1>LG & DG Weather</h1>
+                <h1> LG & DG Weather </h1>
 
-                <input type="text" ref={search} />
+                <input type="text" ref={search} onChange = {searchFn} />
                 <button onClick={searchFn}>Search</button>
 
                 {SHOW_LOADING && <p>Loading...</p>}

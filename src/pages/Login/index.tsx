@@ -13,10 +13,10 @@ const Login: React.FC = () => {
     const onSubmit = useCallback(async (values: { email: string, senha: string }) => {
         try {
             // ! Retirar em producao
-            if(false)return dispatch(logIn({id: 1, nome: 'teste', email: 'lg@gmail.com', senha: '123'}))
+            if(true)return dispatch(logIn({id: 1, nome: 'teste', email: 'lg@gmail.com', senha: '123'}))
 
-            const result = await logar(values)
-            !!result ? dispatch(logIn(result)) : alert('Usuário ou senha inválidos') //! Retirar comentario em producao
+            //const result = await logar(values)
+            //!!result ? dispatch(logIn(result)) : alert('Usuário ou senha inválidos') //! Retirar comentario em producao
         } catch (error) { alert('Erro') }
     }, [dispatch])
 
