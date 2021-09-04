@@ -1,0 +1,108 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+@import '/src/styles/modules/themes/Status.scss';
+@import '/src/styles/modules/themes/Colors.scss';
+
+/*******************************************************
+	List
+*******************************************************/
+
+.listContainer {
+    position: relative;
+
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    overflow-y: auto;
+
+    .listSection {
+        width: 100%;
+
+        &.header {
+            position: sticky;
+            top: 0;
+
+            background-color: $color-theme-t;
+
+            .listRow .listRowContainer .listColumn {
+                padding: 16px 0;
+                
+                color: inherit;
+                font-size: 20px;
+            }
+
+        }
+
+        &.main {
+            background-color: var(--color-layout-p);
+
+            transition: 0.1s ease-in-out;
+
+            .listRow {
+                border-bottom: 2px solid var(--color-divider);
+
+                color: var(--color-txt-t);
+
+                &:hover {
+                    background-color: var(--color-action-hover);
+
+                    color: var(--color-txt-p) !important;
+                }
+
+                .listRowContainer .listColumn {
+                    color: inherit;
+                    font-size: 16px;
+
+                    &.icon {padding-left: 36px;}
+
+                }
+
+            }
+
+        }
+
+        a {width: 100%;}
+
+        .listRow {
+            width: 100%;
+
+            transition: 0.1s ease-in-out;
+
+            .listRowContainer {
+                display: grid;
+                column-gap: 12px;
+                
+                width: 100%;
+                padding: 0 24px;
+
+                .listColumn {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    padding: 12px 0;
+
+                    &.icon .listColumnIconContent {
+                        margin-right: 12px;
+                    }
+
+                }
+
+            }
+
+        }
+        
+        .listStatus {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 48px 24px;
+            border-radius: 0 0 12px 12px;
+            background-color: var(--color-layout-p);
+        }
+
+    }
+
+}

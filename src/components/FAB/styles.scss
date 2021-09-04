@@ -1,0 +1,34 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+@import '/src/styles/modules/themes/Status.scss';
+@import '/src/styles/modules/themes/Colors.scss';
+
+/*******************************************************
+	FAB
+*******************************************************/
+
+#fabGroup {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+
+    button {
+        border-radius: 50%;
+        background-color: $color-theme-t;
+        box-shadow: $color-box-shadow-p;
+
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+
+        &:hover {background-color: $color-theme-t-hover;}
+
+        svg {
+            margin: 16px;
+            border-radius: inherit;
+
+            color: $color-txt-p-dm;
+        }
+
+    }
+    
+}

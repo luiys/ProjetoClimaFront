@@ -1,0 +1,28 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+
+/*******************************************************
+	No Return
+*******************************************************/
+
+.noReturnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 48px 24px;
+
+    svg {
+        margin-bottom: 12px;
+
+        color: var(--color-txt-t);
+    }
+
+    p {
+        color: var(--color-txt-t);
+        font-size: 24px;
+        text-align: center;
+    }
+
+}

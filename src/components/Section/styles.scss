@@ -1,0 +1,78 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+@import '/src/styles/modules/themes/Status.scss';
+@import '/src/styles/modules/themes/Colors.scss';
+
+/*******************************************************
+	Section
+*******************************************************/
+
+section {
+
+    .sectionContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .sectionTitlesContainer {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            gap: 4px 0;
+            margin-bottom: 24px;
+
+            .sectionTitleContent {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+
+                .sectionTitle {
+                    color: var(--color-txt-p);
+                    font-size: 40px;
+                    font-weight: bold;
+                    text-align: left;
+                }
+
+                .sectionTitleComplement {
+                    margin-left: 12px;
+
+                    color: var(--color-txt-t);
+                    font-size: 20px;
+                    font-style: italic;
+                    text-align: left;
+                }
+        
+                .sectionSubTitle {
+                    color: var(--color-txt-t);
+                    font-size: 24px;
+                    font-style: italic;
+                    text-align: left;
+                }
+    
+                .sectionGoBackContainer {
+                    display: flex;
+                    align-items: center;
+    
+                    color: var(--color-txt-t);
+                    font-size: 24px;
+                    text-align: left;
+    
+                    cursor: pointer;
+                    transition: 0.1s ease-in-out;
+    
+                    &:hover {
+                        color: $color-theme-t-hover;
+                    }
+    
+                    svg {margin-right: 8px;}
+    
+                    h3 {font-size: 16px;}
+    
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,25 @@
+@import '/src/styles/base/Vars.scss';
+
+.error {
+    --color-theme-status-p: #{$color-theme-status-error-p};
+    --color-theme-status-s: #{$color-theme-status-error-s};
+    --color-theme-status-t: #{$color-theme-status-error-t};
+}
+
+.warning {
+    --color-theme-status-p: #{$color-theme-status-warning-p};
+    --color-theme-status-s: #{$color-theme-status-warning-s};
+    --color-theme-status-t: #{$color-theme-status-warning-t};
+}
+
+.info {
+    --color-theme-status-p: #{$color-theme-status-info-p};
+    --color-theme-status-s: #{$color-theme-status-info-s};
+    --color-theme-status-t: #{$color-theme-status-info-t};
+}
+
+.success {
+    --color-theme-status-p: #{$color-theme-status-success-p};
+    --color-theme-status-s: #{$color-theme-status-success-s};
+    --color-theme-status-t: #{$color-theme-status-success-t};
+}

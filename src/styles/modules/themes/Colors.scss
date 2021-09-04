@@ -1,0 +1,67 @@
+@import '/src/styles/base/Vars.scss';
+
+.blue {
+    --color-theme-colors-p: #{$blue-p};
+    --color-theme-colors-s: #{$blue-s};
+    --color-theme-colors-t: #{$blue-t};
+}
+
+.indigo {
+    --color-theme-colors-p: #{$indigo-p};
+    --color-theme-colors-s: #{$indigo-s};
+    --color-theme-colors-t: #{$indigo-t};
+}
+
+.purple {
+    --color-theme-colors-p: #{$purple-p};
+    --color-theme-colors-s: #{$purple-s};
+    --color-theme-colors-t: #{$purple-t};
+}
+
+.pink {
+    --color-theme-colors-p: #{$pink-p};
+    --color-theme-colors-s: #{$pink-s};
+    --color-theme-colors-t: #{$pink-t};
+}
+
+.red {
+    --color-theme-colors-p: #{$red-p};
+    --color-theme-colors-s: #{$red-s};
+    --color-theme-colors-t: #{$red-t};
+}
+
+.orange {
+    --color-theme-colors-p: #{$orange-p};
+    --color-theme-colors-s: #{$orange-s};
+    --color-theme-colors-t: #{$orange-t};
+}
+
+.yellow {
+    --color-theme-colors-p: #{$yellow-p};
+    --color-theme-colors-s: #{$yellow-s};
+    --color-theme-colors-t: #{$yellow-t};
+}
+
+.green {
+    --color-theme-colors-p: #{$green-p};
+    --color-theme-colors-s: #{$green-s};
+    --color-theme-colors-t: #{$green-t};
+}
+
+.teal {
+    --color-theme-colors-p: #{$teal-p};
+    --color-theme-colors-s: #{$teal-s};
+    --color-theme-colors-t: #{$teal-t};
+}
+
+.cyan {
+    --color-theme-colors-p: #{$cyan-p};
+    --color-theme-colors-s: #{$cyan-s};
+    --color-theme-colors-t: #{$cyan-t};
+}
+
+.brown {
+    --color-theme-colors-p: #{$brown-p};
+    --color-theme-colors-s: #{$brown-s};
+    --color-theme-colors-t: #{$brown-t};
+}

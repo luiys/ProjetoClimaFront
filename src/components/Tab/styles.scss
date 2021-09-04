@@ -1,0 +1,93 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+@import '/src/styles/modules/themes/Status.scss';
+
+/*******************************************************
+	Tab
+*******************************************************/
+
+.tabContainer {
+    width: 100%;
+
+    .group {
+        width: 100%;
+
+        &.tabLabelGroup {
+            display: grid;
+            margin-bottom: 24px;
+            border-radius: 12px 12px 0 0;
+
+            .tabLabel {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 24px;
+                border-bottom: 2px solid var(--color-disabled-p);
+                border-radius: 12px 12px 0 0;
+
+                color: var(--color-disabled-p);
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+
+                cursor: pointer;
+                transition: 0.1s ease-in-out;
+
+                &:hover {
+                    border-color: var(--color-txt-t);
+                    background-color: var(--color-action-hover);
+
+                    color: var(--color-txt-t);
+                }
+
+                &.active {
+                    border-color: $color-theme-p-normal;
+
+                    color: $color-theme-p-normal;
+
+                    &:hover {
+                        background-color: $color-theme-p-hover;
+                    }
+
+                }
+
+            }
+
+        }
+
+        &.tabPanelGroup {
+            
+            .tabPanel {
+                display: none;
+                width: 100%;
+                min-height: 50vh;
+                border-radius: 0 0 12px 12px;
+
+                &.active {
+                    display: block;
+                }
+
+                .tabPanelContainer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+
+                    .tabPanelTitle {
+                        margin-bottom: 12px;
+
+                        color: var(--color-txt-s);
+                        font-size: 24px;
+                        font-style: italic;
+                        font-weight: bold;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

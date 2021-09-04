@@ -1,0 +1,15 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Theme.scss';
+@import '/src/styles/modules/themes/Status.scss';
+@import '/src/styles/modules/themes/Colors.scss';
+
+/*******************************************************
+	Wrapper
+*******************************************************/
+
+#wrapper {
+    min-height: 100vh;
+    background-color: var(--color-layout-foreground);
+
+    transition: 0.1s ease-in-out;
+}

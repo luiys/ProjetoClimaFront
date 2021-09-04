@@ -1,0 +1,146 @@
+@import '/src/styles/base/Vars.scss';
+
+/*******************************************************
+	Html & Body - V3
+*******************************************************/
+
+* {
+    float: left;
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+	font-family: 'Google Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+}
+
+/*******************************************************
+	Link - V5
+*******************************************************/
+
+a {		
+	border: none;
+	outline: none;
+
+	color: none;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+a:link, a:active, a:visited, a:hover, a:focus {
+	border: none;
+	outline: none;
+
+	color: none;
+	text-decoration: none;
+}
+
+/*******************************************************
+	Input - V3
+*******************************************************/
+
+input {
+	border: none;
+	outline: none;
+}
+
+input:focus, select:focus {
+	outline: none;
+}
+
+/*******************************************************
+	Image - V2
+*******************************************************/
+
+img {
+	width: 100%;
+	height: auto;
+    vertical-align: top;
+
+    color: var(--color-disabled-p);
+    font-size: 16px;
+}
+
+/*******************************************************
+	Text - V3
+*******************************************************/
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+
+	font-weight: normal;
+}
+
+/*******************************************************
+	List - V1
+*******************************************************/
+
+ul, li {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************************************************
+	Button - V1
+*******************************************************/
+
+button {
+	border: none;
+
+    &:hover, &:focus {
+        outline: none;
+    }
+
+}
+
+
+/*******************************************************
+	Elements
+*******************************************************/
+
+html, body, header, main, footer, section {
+	width: 100%;
+}
+
+body {
+	overflow: overlay !important;
+}
+
+#root, #wrapper {
+    width: 100%;
+}
+
+#headerContainer, #mainContainer, #footerContainer, .sectionContainer {
+    width: 100%;
+}
+
+/*******************************************************
+	Scroll
+*******************************************************/
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 6px; 
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: rgba(0,0,0,0.4); 
+}
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,0.6); 
+    }

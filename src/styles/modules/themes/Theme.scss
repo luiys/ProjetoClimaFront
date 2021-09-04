@@ -1,0 +1,58 @@
+@import '/src/styles/base/Vars.scss';
+@import '/src/styles/modules/themes/Colors.scss';
+
+/*******************************************************
+	Light
+*******************************************************/
+
+.light-mode {
+    --color-txt-p: #{$color-txt-p-lm};
+    --color-txt-s: #{$color-txt-s-lm};
+    --color-txt-t: #{$color-txt-t-lm};
+
+    --color-layout-p: #{$color-layout-p-lm};
+    --color-layout-s: #{$color-layout-s-lm};
+    --color-layout-t: #{$color-layout-t-lm};
+    --color-layout-foreground: #{$color-layout-foreground-lm};
+
+    --color-action-active: #{$color-action-active-lm};
+    --color-action-hover: #{$color-action-hover-lm};
+    --color-action-selected: #{$color-action-selected-lm};
+
+    --color-disabled-p: #{$color-disabled-p-lm};
+    --color-disabled-s: #{$color-disabled-s-lm};
+
+    --color-divider: #{$color-divider-lm};
+}
+
+/*******************************************************
+	Dark
+*******************************************************/
+
+.dark-mode {
+    --color-txt-p: #{$color-txt-p-dm};
+    --color-txt-s: #{$color-txt-s-dm};
+    --color-txt-t: #{$color-txt-t-dm};
+
+    --color-layout-p: #{$color-layout-p-dm};
+    --color-layout-s: #{$color-layout-s-dm};
+    --color-layout-t: #{$color-layout-t-dm};
+    --color-layout-foreground: #{$color-layout-foreground-dm};
+
+    --color-action-active: #{$color-action-active-dm};
+    --color-action-hover: #{$color-action-hover-dm};
+    --color-action-selected: #{$color-action-selected-dm};
+
+    --color-disabled-p: #{$color-disabled-p-dm};
+    --color-disabled-s: #{$color-disabled-s-dm};
+
+    --color-divider: #{$color-divider-dm};
+}
+
+#wrapper.dark-mode {
+
+    #homeHeader {
+        background-color: var(--color-theme-colors-t) !important;
+    }
+
+}

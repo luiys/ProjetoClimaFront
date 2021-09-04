@@ -1,0 +1,22 @@
+@import '/src/styles/base/Vars.scss';
+
+/*******************************************************
+	Padding
+*******************************************************/
+
+section {
+    padding: 16px 0;
+
+    &:first-of-type {
+        padding-top: 40px !important;
+    } 
+    
+    &:last-of-type {
+        padding-bottom: 40px !important;
+    }
+    
+    .sectionContainer {
+        padding: 0 72px;
+    }
+
+}
