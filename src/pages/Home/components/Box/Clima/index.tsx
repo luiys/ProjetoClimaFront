@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { BoxClimaProps, BoxClimaTexts } from '../types'
+import { BoxClimaProps, BoxClimaTextsProps } from '../types'
 
-const Clima:React.FC <BoxClimaProps> = ({current, max, min}) => {
+const Clima:React.FC <BoxClimaProps> = ({current, max, min, feels}) => {
 
-    const ClimaTextContainer:React.FC <BoxClimaTexts> = ({title, text}) => {
+    const ClimaTextContainer:React.FC <BoxClimaTextsProps> = ({title, text}) => {
 
         return(
 
-            <div className = "climaTextContainer">
+            <div className = "climaBox">
                 <span className = "climaText"> {text}°c </span>
                 <h3> {title} </h3>
             </div>
@@ -19,10 +19,11 @@ const Clima:React.FC <BoxClimaProps> = ({current, max, min}) => {
 
     return(
 
-        <div className = "homeBoxClimaContainer">
-            <ClimaTextContainer title = "Atual" text = {current} />
-            <ClimaTextContainer title = "Máxima" text = {max} />
-            <ClimaTextContainer title = "Mínima" text = {min} />
+        <div className = "homeBoxClimaGroup">
+            <ClimaTextContainer title = "Atual" text = {current.toFixed(1)} />
+            <ClimaTextContainer title = "Máxima" text = {max.toFixed(0)} />
+            <ClimaTextContainer title = "Mínima" text = {min.toFixed(0)} />
+            <ClimaTextContainer title = "Sensação" text = {feels.toFixed(0)} />
         </div>
 
     )

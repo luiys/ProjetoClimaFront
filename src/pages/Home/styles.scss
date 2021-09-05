@@ -20,7 +20,7 @@
 
     #homeHeader {
         width: 100%;
-        border-radius: 32px;
+        border-radius: 24px;
         background-color: var(--color-theme-colors-p);
         box-shadow: $color-box-shadow-p;
 
@@ -163,82 +163,182 @@
 
     }
 
-    #homeContainer {
+    #homeGrid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0 48px;
+        grid-template-columns: 1fr 300px;
+        gap: 0 64px;
         width: 100%;
 
-        .homeBox {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 32px;
-            border-radius: 32px;
+        #homeInfoGrid {
+            display: grid;
+            grid-template-rows: 1fr 174px;
+            gap: 48px;
+            width: 100%;
+            height: 100%;
 
-            transition: $transition-theme;
-            
-            &.background {
-                background-color: var(--color-layout-s);
-                box-shadow: $color-box-shadow-p;
-            }
-
-            &.color-mode {
-                background-color: var(--color-theme-colors-p);
-                box-shadow: $color-box-shadow-p;
-            }
-
-            .homeBoxLoadContainer {
-                flex: 1;
+            .homeInfoGridContent {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-            }
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0 24px;
 
-            .homeBoxErrorContainer {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
+                .homeTitles {
+                    max-width: 360px;
+                    
+                    h1 {
+                        color: var(--color-txt-p);
+                        font-size: 40px;
+                        font-weight: bold;
+                        text-align: left;
+                    }
 
-                h3 {
-                    color: bar(--color-txt-p);
-                    font-size: 64px;
-                    text-align: center;
-
-                    &.error {
-                        color: $color-theme-status-error-p;
+                    h2 {
+                        margin-top: 8px;
+                        
+                        color: var(--color-txt-t);
+                        font-size: 24px;
+                        font-style: italic;
+                        text-align: left;
                     }
 
                 }
 
-            }
+                .homeInfos {
+                    width: 100%;
+                    height: 100%;
+                }
 
-            .homeBoxClimaContainer {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                width: 100%;
-
-                .climaTextContainer {
+                .homeMessageContainer {
+                    flex: 1;
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
-                    margin-bottom: 24px;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
 
-                    .climaText {
-                        color: var(--color-txt-p);
-                        font-size: 64px;
+                    .messageTexts {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        span {
+                            color: var(--color-txt-p);
+                            font-size: 72px;
+                        }
+
+                        h3 {
+                            margin: 20px 0 4px;
+
+                            color: var(--color-txt-s);
+                            font-size: 36px;
+                        }
+
+                        h4 {
+                            color: var(--color-txt-t);
+                            font-size: 20px;
+                        }
+
                     }
 
-                    h3 {
-                        margin-left: 20px;
+                }
 
-                        color: var(--color-txt-t);
-                        font-size: 24px;
-                        font-style: italic;
+                .homeLoadContainer {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .homeBoxErrorGroup {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 24px;
+                    height: 100%;
+
+                    .errorBox {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 160px;
+                        height: 100%;
+                        border-radius: 24px;
+                        background-color: var(--color-layout-box);
+                        box-shadow: $color-box-shadow-p;
+
+                        transition: $transition-theme;
+
+                        &:nth-child(1){
+                            width: 220px;
+                        }
+
+                        .errorValue {
+                            color: var(--color-txt-p);
+                            font-size: 64px;
+                            font-weight: bold;
+                        }
+
+                        h3 {
+                            color: var(--color-disabled-p);
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+
+                    }
+
+                }
+
+                .homeBoxClimaGroup {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 24px;
+
+                    .climaBox {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 32px 24px;
+                        border-radius: 24px;
+                        box-shadow: $color-box-shadow-p;
+
+                        &:nth-child(1){
+                            background: rgb(53,195,34);
+                            background: linear-gradient(45deg, rgba(53,195,34,1) 0%, rgba(253,219,45,1) 100%);
+                        }
+    
+                        &:nth-child(2){
+                            background: rgb(195,34,34);
+                            background: linear-gradient(45deg, rgba(195,34,34,1) 0%, rgba(253,202,45,1) 100%);
+                        }
+    
+                        &:nth-child(3){
+                            background: rgb(34,72,195);
+                            background: linear-gradient(45deg, rgba(34,72,195,1) 0%, rgba(45,253,198,1) 100%);
+                        }
+
+                        &:nth-child(4){
+                            background: rgb(136,34,195);
+                            background: linear-gradient(45deg, rgba(136,34,195,1) 0%, rgba(245,137,137,1) 100%);
+                        }
+
+                        .climaText {
+                            color: $color-txt-p-lm;
+                            font-size: 64px;
+                            font-weight: bold;
+                        }
+
+                        h3 {
+                            color: $color-txt-p-lm;
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+
                     }
 
                 }

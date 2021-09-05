@@ -8,14 +8,17 @@ import "react-activity/dist/Dots.css"
 
 import './styles.scss'
 
-import { useTheme, Theme } from "../../context/ThemeContext"
-
 import getWheater from './scripts/getWheater'
+
+import { useTheme, Theme } from "../../context/ThemeContext"
 import { useAppSelector } from '../../redux/hooks'
 import { logOut } from '../../redux/reducers/authReducer'
 
 import HomeHeader from './components/Header'
 import Box from './components/Box'
+import { Section } from '../../components/Section'
+import GetRandomSadEmojis from '../../utils/Emojis/GetRandomEmoji'
+import { sadEmojis } from '../../utils/Emojis'
 
 const Home: React.FC = () => {
 
@@ -48,7 +51,6 @@ const Home: React.FC = () => {
                 <HomeHeader.Container theme = "blue">
                     <HomeHeader.Content name = "banner">
                         <h1> Weather Project </h1>
-                        <h2> LG & DG </h2>
                     </HomeHeader.Content>
                     <HomeHeader.Content name = "search">
                         <div id = "homeHeaderSearchBox">
@@ -66,7 +68,7 @@ const Home: React.FC = () => {
                                 <HomeHeader.Options.Icon
                                     tooltip = {theme === 'dark-mode' ? 'Tema claro' : 'Tema escuro'}
                                     icon = {theme === 'dark-mode' ? mdiBrightness5 : mdiBrightness4} 
-                                    size = "36px" 
+                                    size = "32px" 
                                     onClick = {() => setTheme(theme === 'dark-mode' ? Theme.Light : Theme.Dark)}
                                 />
                             </HomeHeader.Options.Item>
@@ -74,7 +76,7 @@ const Home: React.FC = () => {
                                 <HomeHeader.Options.Icon
                                     tooltip = "Sair"
                                     icon = {mdiLogout}
-                                    size = "36px"
+                                    size = "32px"
                                     onClick = {userLogOut}
                                 />
                             </HomeHeader.Options.Item>
@@ -82,34 +84,48 @@ const Home: React.FC = () => {
                     </HomeHeader.Content>
                 </HomeHeader.Container>
 
-                <ul id = "homeContainer">
-
-                    <Box.Item> MAPA // Pegar localização atual e apresentar aqui </Box.Item>
-
-                    <Box.Item background>
-
-                        {SHOW_LOADING && <div className = "homeBoxLoadContainer"><Dots color = "grey" size = {64} /></div>}
-                    
-                        {SHOW_ERROR && (
-                            <div className = "homeBoxErrorContainer">
-                                <h3 className = "error"> {search.current?.value! ? `${search.current?.value!} não tem clima :(` : 'Pesquise uma cidade e seu clima aparecerá aqui!'} </h3>
-                            </div>
-                        )}
-
-                        {SHOW_DATA && <Box.Clima current = {data!.main.temp} max = {data!.main.temp_max} min = {data!.main.temp_min} />}
-
-                        {SHOW_NO_DATA && <p> Pesquise uma cidade e seu clima aparecerá aqui! </p>}
-                    </Box.Item>
-
-                    <Box.Item theme = 'blue'> Histórico e opções </Box.Item>
-
-                </ul>
+                <div id = "homeGrid">
+                    <Section type = "default" name = "info">
+                        <ul id = "homeInfoGrid">
+                            <li className = "homeInfoGridContent">
+                                <div className = "homeTitles">
+                                    <h1> Wheater Project </h1>
+                                    <h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod vitae officia laborum unde enim porro error neque voluptatum </h2>
+                                </div>
+                                <div className = "homeInfos">
+                                    {SHOW_LOADING && <div className = "homeLoadContainer"><Dots color = "grey" size = {64} /></div>}
+                                    {SHOW_ERROR && (
+                                        <div className = "homeMessageContainer">
+                                            {search.current?.value! ? (
+                                                <div className = "messageTexts">
+                                                    <span> {GetRandomSadEmojis(sadEmojis)} </span>
+                                                    <h3> {search.current?.value!} </h3>
+                                                    <h4> Não está no mapa! </h4>
+                                                </div>
+                                            ) : <h3> Pesquise uma cidade e seu clima aparecerá aqui! </h3>}
+                                        </div>
+                                    )}
+                                    {SHOW_DATA && <p> Mapa {search.current?.value!} </p>}
+                                </div>
+                            </li>
+                            <li className = "homeInfoGridContent">
+                                {SHOW_DATA && <Box.Clima current = {data!.main.temp} max = {data!.main.temp_max} min = {data!.main.temp_min} feels = {data!.main.feels_like} />}
+                                {SHOW_ERROR && <Box.Error /> }
+                                {SHOW_NO_DATA && <p> Pesquise uma cidade e seu clima aparecerá aqui! </p>}
+                            </li>
+                        </ul>
+                    </Section>
+                    <Section type = "default" name = "History" subTitle = "Histórico">
+                        List Item
+                    </Section>
+                </div>
+                
             </div>
 
         )
 
     } catch (error) {
-        console.log('erro na home')
+        console.log('erro na home',error)
         return <h1>Erro na home</h1>
     }
 

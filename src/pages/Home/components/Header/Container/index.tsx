@@ -7,7 +7,7 @@ const Container:React.FC <ContainerProps> = ({children, theme}) => {
 
     return(
 
-        <header id = "homeHeader" className = {`color-mode ${theme} ${SetBestTheme(theme, 'HomeHeader')}`}>
+        <header id = "homeHeader" className = {`color-theme ${theme} ${SetBestTheme(theme, 'HomeHeader')}`}>
             <ul id = "homeHeaderContainer"> {children} </ul>
         </header>
 

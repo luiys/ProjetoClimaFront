@@ -14,6 +14,7 @@
     --color-layout-s: #{$color-layout-s-lm};
     --color-layout-t: #{$color-layout-t-lm};
     --color-layout-foreground: #{$color-layout-foreground-lm};
+    --color-layout-box: #{$color-layout-box-lm};
 
     --color-action-active: #{$color-action-active-lm};
     --color-action-hover: #{$color-action-hover-lm};
@@ -38,6 +39,7 @@
     --color-layout-s: #{$color-layout-s-dm};
     --color-layout-t: #{$color-layout-t-dm};
     --color-layout-foreground: #{$color-layout-foreground-dm};
+    --color-layout-box: #{$color-layout-box-dm};
 
     --color-action-active: #{$color-action-active-dm};
     --color-action-hover: #{$color-action-hover-dm};
@@ -51,7 +53,7 @@
 
 #wrapper.dark-mode {
 
-    #homeHeader, .homeBox.color-mode {
+    #homeHeader, .homeBox.color-theme {
         background-color: var(--color-theme-colors-t) !important;
     }
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import PageRender from '../../components/PageRender'
 
 import { Theme, ThemeContext } from '../../context/ThemeContext'
 
+import PageRender from '../../components/PageRender'
 import Clima from '../../pages/Clima'
 import Home from '../../pages/Home'
 import NotFound from '../../pages/NotFound'

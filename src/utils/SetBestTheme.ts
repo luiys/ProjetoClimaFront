@@ -2,7 +2,7 @@ export default function SetBestTheme(theme: string, path: string){
 
     let mode
 
-    if(theme === 'pink' || theme === 'orange' || theme === 'yellow' || theme === 'teal' || theme === 'cyan' || theme == 'white'){
+    if(theme === 'pink' || theme === 'orange' || theme === 'yellow' || theme === 'teal' || theme === 'cyan' || theme === 'white'){
         mode = 'light-mode'
     }else{
         mode = 'dark-mode'

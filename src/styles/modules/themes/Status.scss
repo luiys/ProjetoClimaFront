@@ -1,25 +1,29 @@
 @import '/src/styles/base/Vars.scss';
 
-.error {
-    --color-theme-status-p: #{$color-theme-status-error-p};
-    --color-theme-status-s: #{$color-theme-status-error-s};
-    --color-theme-status-t: #{$color-theme-status-error-t};
-}
+.status-theme {
 
-.warning {
-    --color-theme-status-p: #{$color-theme-status-warning-p};
-    --color-theme-status-s: #{$color-theme-status-warning-s};
-    --color-theme-status-t: #{$color-theme-status-warning-t};
-}
+    &.error {
+        --color-theme-status-p: #{$color-theme-status-error-p};
+        --color-theme-status-s: #{$color-theme-status-error-s};
+        --color-theme-status-t: #{$color-theme-status-error-t};
+    }
 
-.info {
-    --color-theme-status-p: #{$color-theme-status-info-p};
-    --color-theme-status-s: #{$color-theme-status-info-s};
-    --color-theme-status-t: #{$color-theme-status-info-t};
-}
+    &.warning {
+        --color-theme-status-p: #{$color-theme-status-warning-p};
+        --color-theme-status-s: #{$color-theme-status-warning-s};
+        --color-theme-status-t: #{$color-theme-status-warning-t};
+    }
 
-.success {
-    --color-theme-status-p: #{$color-theme-status-success-p};
-    --color-theme-status-s: #{$color-theme-status-success-s};
-    --color-theme-status-t: #{$color-theme-status-success-t};
+    &.info {
+        --color-theme-status-p: #{$color-theme-status-info-p};
+        --color-theme-status-s: #{$color-theme-status-info-s};
+        --color-theme-status-t: #{$color-theme-status-info-t};
+    }
+
+    &.success {
+        --color-theme-status-p: #{$color-theme-status-success-p};
+        --color-theme-status-s: #{$color-theme-status-success-s};
+        --color-theme-status-t: #{$color-theme-status-success-t};
+    }
+
 }

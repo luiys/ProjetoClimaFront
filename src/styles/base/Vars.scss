@@ -30,7 +30,8 @@ $color-txt-t-lm: #5f6368;
 $color-layout-p-lm: #ffffff;
 $color-layout-s-lm: #dcdcdc;
 $color-layout-t-lm: #a9a9a9;
-$color-layout-foreground-lm: #f3f3f3;
+$color-layout-foreground-lm: #f1f1f1;
+$color-layout-box-lm: $color-layout-p-lm;
 
 $color-action-active-lm: rgba(0,0,0,0.54);
 $color-action-hover-lm: rgba(0,0,0,0.08);
@@ -42,7 +43,7 @@ $color-disabled-s-lm: rgba(0,0,0,0.12);
 $color-divider-lm: rgba(0,0,0,0.12);
 
 /* Dark Mode */
-$color-txt-p-dm: rgba(255,255,255,1);
+$color-txt-p-dm: rgb(255,255,255);
 $color-txt-s-dm: rgba(255,255,255,0.7);
 $color-txt-t-dm: rgba(255,255,255,0.5);
 
@@ -50,6 +51,7 @@ $color-layout-p-dm: #202124;
 $color-layout-s-dm: #303134;
 $color-layout-t-dm: #1E1E1E;
 $color-layout-foreground-dm: $color-layout-p-dm;
+$color-layout-box-dm: $color-layout-s-dm;
 
 $color-action-active-dm: rgba(255,255,255,1);
 $color-action-hover-dm: rgba(255,255,255,0.2);
