@@ -24,6 +24,14 @@ const PageRender: React.FC <PageRenderProps> = props => {
                 </div>
 
             ) : null}
+            {props.pageType === 'error' ? (
+
+                <div id = "wrapper" className = {`wrapperError ${props.theme1}`} data-theme = {props.theme1} data-page = {props.name}>
+                    <ScrollReset />
+                    {props.component}
+                </div> 
+
+            ) : null}
         </>
 
     )

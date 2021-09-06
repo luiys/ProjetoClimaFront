@@ -24,7 +24,6 @@ export const useTheme = () => {
     let storage:string | null = localStorage.getItem('theme')
 
     useEffect(() => {
-        //
         storage ? localStorage.setItem('theme', value) : localStorage.setItem('theme', Theme.Light)
     }, [value, storage])  
 

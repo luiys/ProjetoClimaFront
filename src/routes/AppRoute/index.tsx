@@ -28,7 +28,7 @@ const AppRoute: React.FC = () => {
                     <Route
                         exact path = "*"
                         render = {props => (
-                            <PageRender {...props} pageType = "default" name = "NotFound" title = "404" theme1 = {theme} component = {<NotFound />} />
+                            <PageRender {...props} pageType = "error" name = "NotFound" title = "404" theme1 = {theme} component = {<NotFound />} />
                         )}
                     />
 

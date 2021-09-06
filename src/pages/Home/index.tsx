@@ -58,10 +58,8 @@ const Home: React.FC = ()  => {
                         type = "default"
                         name = "Titles"
                         title = "Wheather Project"
-                        subTitle = "Placeholder"
-                    >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia iusto natus cumque nam temporibus reprehenderit, ipsa porro sit repellat asperiores nihil cum aliquid repellendus sint velit nemo vitae alias impedit?
-                    </Section>
+                        subTitle = "Criado por LG & DG"
+                    />
 
                     <Section type = "default" name = "Info">
                         <ul id = "homeInfoGrid">
@@ -80,6 +78,7 @@ const Home: React.FC = ()  => {
 
                                     {R.SHOW_DATA &&
                                         <div className = "homeCityContainer">
+                                            <h4 className = "cityTitle"> {searchRef.current?.value!} </h4>
                                             <Map position = {[data?.coord.lat!, data?.coord.lon!]} />
                                         </div>
                                     }
@@ -98,7 +97,7 @@ const Home: React.FC = ()  => {
                                 {R.SHOW_DATA && <HomeBox.Clima current = {data!.main.temp} max = {data!.main.temp_max} min = {data!.main.temp_min} feels = {data!.main.feels_like} />}
                                 {R.SHOW_ERROR && <HomeBox.Error />}
                                 {R.SHOW_NO_DATA && <HomeBox.Error />}
-                                
+
                             </li>
                         </ul>
                     </Section>
