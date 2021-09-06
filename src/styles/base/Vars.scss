@@ -30,11 +30,12 @@ $color-txt-t-lm: #5f6368;
 $color-layout-p-lm: #ffffff;
 $color-layout-s-lm: #dcdcdc;
 $color-layout-t-lm: #a9a9a9;
+$color-layout-header-lm: $color-layout-p-lm;
 $color-layout-foreground-lm: #f1f1f1;
 $color-layout-box-lm: $color-layout-p-lm;
 
 $color-action-active-lm: rgba(0,0,0,0.54);
-$color-action-hover-lm: rgba(0,0,0,0.08);
+$color-action-hover-lm: rgba(0,0,0,0.14);
 $color-action-selected-lm: rgba(0,0,0,0.08);
 
 $color-disabled-p-lm: rgba(0,0,0,0.26);
@@ -50,6 +51,7 @@ $color-txt-t-dm: rgba(255,255,255,0.5);
 $color-layout-p-dm: #202124;
 $color-layout-s-dm: #303134;
 $color-layout-t-dm: #1E1E1E;
+$color-layout-header-dm: $color-layout-s-dm;
 $color-layout-foreground-dm: $color-layout-p-dm;
 $color-layout-box-dm: $color-layout-s-dm;
 
@@ -130,4 +132,6 @@ $gray-p: #6c757d;
 
 $black-p: #000000;
 
+/* Transitions */
+$transition-default: 0.1s ease-in-out;
 $transition-theme: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 

@@ -6,6 +6,3 @@ export const SignupSchema = () => yup.object().shape({
     senha: yup.string().required('A senha é obrigatória'),
     confirmarSenha: yup.string().required('A confirmação de senha é obrigatória').oneOf([yup.ref('senha')], 'As senhas não conferem')
 })
-
-export const container = { width: `100vw`, height: '100vh' }
-export const box = { width: `100%`, height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }

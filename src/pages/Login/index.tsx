@@ -1,10 +1,12 @@
-import React, { useCallback } from 'react';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { logIn } from '../../redux/reducers/authReducer';
-import { box, container, SignInSchema } from './constantes';
-import logar from './scripts/logar';
+import React, { useCallback } from 'react'
+import { ErrorMessage, Field, Form as FormikContainer, Formik } from 'formik'
+import { useDispatch } from 'react-redux'
 
+import { box, container, SignInSchema } from './constantes'
+import logar from './scripts/logar'
+
+import { logIn } from '../../redux/reducers/authReducer'
+import Form from '../../components/Form'
 
 const Login: React.FC = () => {
 
@@ -20,31 +22,45 @@ const Login: React.FC = () => {
         } catch (error) { alert('Erro') }
     }, [dispatch])
 
-    return (
-        <div style={container}>
-            <div style={box} >
+    return(
+
+        <>
+            <Form.Header />
+
+            <Form.Box title = "Fazer Login">
                 <Formik
-                    initialValues={{ email: '', senha: '' }}
-                    onSubmit={onSubmit}
-                    validationSchema={SignInSchema}
+                    initialValues = {{ email: '', senha: '' }}
+                    onSubmit = {onSubmit}
+                    validationSchema = {SignInSchema}
                 >
 
-                    <Form style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                        <Field type="email" name="email" placeholder="email" />
-                        <ErrorMessage name="email" component="div" />
+                    <FormikContainer style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 
-                        <Field type="password" name="senha" placeholder="senha" />
-                        <ErrorMessage name="senha" component="div" />
+                        <Form.Section name = "input">
+                            <Form.Label id = "login_email" label = "Email" />
+                            <Field id = "login_email" type = "email" name = "email" placeholder = "email" />
+                            <ErrorMessage name = "email" component = "h4" />
+                        </Form.Section>
 
-                        <button type="submit">Submit</button>
-                    </Form>
+                        <Form.Section name = "input">
+                            <Form.Label id = "login_password" label = "Senha" />
+                            <Field id = "login_password" type = "password" name = "senha" placeholder = "senha" />
+                            <ErrorMessage name = "senha" component = "h4" />
+                        </Form.Section>
+
+                        <Form.Section name = "options">
+                            <Form.Button type = "submit" disabled = {false} label = "Entrar" />
+                        </Form.Section>
+
+                    </FormikContainer>
 
 
                 </Formik>
-            </div>
-        </div>
+            </Form.Box>
+        </>
 
-    );
+    )
+
 }
 
 export default Login;

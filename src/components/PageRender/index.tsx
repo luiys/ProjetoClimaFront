@@ -32,6 +32,14 @@ const PageRender: React.FC <PageRenderProps> = props => {
                 </div> 
 
             ) : null}
+            {props.pageType === 'form' ? (
+
+                <div id = "wrapper" className = {`wrapperForm ${props.theme1}`} data-theme = {props.theme1} data-page = {props.name}>
+                    <ScrollReset />
+                    {props.component}
+                </div> 
+
+            ) : null}
         </>
 
     )
