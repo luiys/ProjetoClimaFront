@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-
-import { Theme, ThemeContext } from '../../context/ThemeContext'
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import PageRender from '../../components/PageRender'
-import Clima from '../../pages/Clima'
+import { Theme, ThemeContext } from '../../context/ThemeContext'
 import Home from '../../pages/Home'
 import NotFound from '../../pages/NotFound'
 
@@ -23,12 +20,6 @@ const AppRoute: React.FC = () => {
                         exact path = "/"
                         render = {props => (
                             <PageRender {...props} pageType = "default" name = "Home" title = "Home" theme1 = {theme} component = {<Home />} />
-                        )}
-                    />
-                    <Route
-                        exact path = "/clima"
-                        render = {props => (
-                            <PageRender {...props} pageType = "default" name = "Clima" title = "Clima" theme1 = {theme} component = {<Clima />} />
                         )}
                     />
                     <Route

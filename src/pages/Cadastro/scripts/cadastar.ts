@@ -4,7 +4,7 @@ export default async function cadastar(values: Omit<User, 'id'>) {
 
     try {
 
-        const response = await fetch('http://localhost:5000/api/user/cadastro', {
+        const response = await fetch(process.env.REACT_APP_USER_CADASTRAR!, {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify({

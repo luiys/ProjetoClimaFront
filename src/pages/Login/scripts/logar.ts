@@ -4,7 +4,7 @@ export default async function logar(values: { email: string, senha: string }) : 
 
     try {
 
-        const response = await fetch('http://localhost:5000/api/user/verificaLogin', {
+        const response = await fetch(process.env.REACT_APP_USER_LOGIN!, {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(values)
