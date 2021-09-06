@@ -9,7 +9,7 @@ export interface HistoryProps {
 
 const History: React.FC <HistoryProps> = ({city, current, max, min}) => {
 
-    return (
+    return(
 
         <li className = "homeHistoryBox">
             <h4> {city} </h4>

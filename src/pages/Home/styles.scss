@@ -67,12 +67,14 @@
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        border-radius: 24px;
+                        border-radius: 27px;
                         background-color: rgba(0,0,0,0.2);
                     }
 
                     input {
                         padding: 12px 24px;
+                        border-top-left-radius: inherit;
+                        border-bottom-left-radius: inherit;
                         background-color: transparent;
 
                         color: var(--color-disabled-p);
@@ -86,11 +88,6 @@
 
                         &:focus, &:hover {
                             color: var(--color-txt-p);
-
-                            &::placeholder {
-                                color: var(--color-txt-s);
-                            }
-
                         }
 
                     }
@@ -101,7 +98,8 @@
                         justify-content: center;
                         width: 54px !important;
                         height: 54px !important;
-                        border-radius: 0 24px 24px 0;
+                        padding: 15px;
+                        border-radius: inherit;
 
                         color: var(--color-disabled-p);
 

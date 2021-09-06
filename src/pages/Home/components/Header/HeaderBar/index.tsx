@@ -13,7 +13,7 @@ import HomeHeader from '..'
 
 const HeaderBar: React.FC <HeaderBarProps> = ({searchRef, searchFunction, userLogout}) => {
 
-    const [pageTheme, setPageTheme] = useState(GetColorTheme(undefined))
+    const [pageTheme, setPageTheme] = useState(GetColorTheme(undefined, undefined))
 
     const { theme, setTheme } = useTheme()
 
@@ -22,12 +22,13 @@ const HeaderBar: React.FC <HeaderBarProps> = ({searchRef, searchFunction, userLo
         <HomeHeader.Container theme = {pageTheme}>
              <HomeHeader.Content name = "banner">
                 <h1> Weather Project </h1>
+                <h2> LG & DG </h2>
             </HomeHeader.Content>
             <HomeHeader.Content name = "search">
                 <div id = "homeHeaderSearchBox">
-                    <input type = "text" ref = {searchRef} placeholder = "Pesquise alguma cidade..." onChange = {() => searchFunction()} />
+                    <input type = "text" ref = {searchRef} placeholder = "Pesquise alguma cidade..." /*onChange = {() => searchFunction()}*/ />
                     <Tooltip title = "Pesquisar" arrow>
-                        <span className = "searchIcon" onClick = {() => searchFunction}>
+                        <span className = "searchIcon" onClick = {() => searchFunction()}>
                             <Icon path = {mdiMagnify} size = "24px" />
                         </span>
                     </Tooltip>
@@ -40,7 +41,7 @@ const HeaderBar: React.FC <HeaderBarProps> = ({searchRef, searchFunction, userLo
                             tooltip = 'Mudar cor'
                             icon = {mdiPalette} 
                             size = "32px" 
-                            onClick = {() => setPageTheme(GetColorTheme(undefined))}
+                            onClick = {() => setPageTheme(GetColorTheme(undefined, pageTheme))}
                         />
                     </HomeHeader.Options.Item>
                     <HomeHeader.Options.Item>

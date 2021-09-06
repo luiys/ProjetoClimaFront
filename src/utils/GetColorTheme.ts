@@ -1,15 +1,22 @@
 import { ColorsTheme } from "./Colors/ColorsThemes"
 import GetRandomInt from "./GetRandomInt"
 
-export default function GetColorTheme(type: string | undefined){
+export default function GetColorTheme(color: string | undefined, currentColor: string | undefined){
 
     const RandomColor = () => {
-        let randomIndex = GetRandomInt(0, ColorsTheme.length)
-        return ColorsTheme[randomIndex]
+
+        let colorIndex
+
+        do{
+            colorIndex = GetRandomInt(0, ColorsTheme.length)
+        }while(ColorsTheme[colorIndex] === currentColor)
+
+        return ColorsTheme[colorIndex]
+
     }
 
-    if(type){
-        let findColor = ColorsTheme.find(color => color === type)
+    if(color){
+        let findColor = ColorsTheme.find(findColor => findColor === color)
         return findColor ? findColor : RandomColor
     }else{
         return RandomColor
