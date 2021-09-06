@@ -7,7 +7,7 @@ const Error:React.FC = () => {
 
         return(
 
-            <div className = "errorBox">
+            <div className = "homeBox errorBox">
                 <span className = "errorValue"> ? </span>
                 <h3> ? </h3>
             </div>
@@ -18,7 +18,7 @@ const Error:React.FC = () => {
 
     return(
 
-        <div className = "homeBoxErrorGroup">
+        <div className = "homeBoxGroup homeBoxErrorGroup">
             {_.times(4, (i) => (
                 <ErrorBox key = {i} />
             ))}

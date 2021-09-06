@@ -1,3 +1,11 @@
+import { LegacyRef } from "react"
+
+export type HeaderBarProps = {
+    searchRef: LegacyRef,
+    searchFunction: Function,
+    userLogout: Function,
+}
+
 export type ContainerProps = {
     theme: string,
 }

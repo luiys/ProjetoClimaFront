@@ -8,7 +8,7 @@ const Clima:React.FC <BoxClimaProps> = ({current, max, min, feels}) => {
 
         return(
 
-            <div className = "climaBox">
+            <div className = "homeBox climaBox">
                 <span className = "climaText"> {text}°c </span>
                 <h3> {title} </h3>
             </div>
@@ -19,7 +19,7 @@ const Clima:React.FC <BoxClimaProps> = ({current, max, min, feels}) => {
 
     return(
 
-        <div className = "homeBoxClimaGroup">
+        <div className = "homeBoxGroup homeBoxClimaGroup">
             <ClimaTextContainer title = "Atual" text = {current.toFixed(1)} />
             <ClimaTextContainer title = "Máxima" text = {max.toFixed(0)} />
             <ClimaTextContainer title = "Mínima" text = {min.toFixed(0)} />

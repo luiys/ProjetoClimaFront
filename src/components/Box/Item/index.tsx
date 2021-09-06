@@ -3,31 +3,46 @@ import { Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
 import { BoxProps } from './../types'
+import GetContrast from '../../../utils/Colors/GetColorContrast'
 
 const Item: React.FC <BoxProps> = props => { 
+
+    const Container: React.FC = ({children}) => (
+        <li className = {`box ${props.link || props.function ? 'boxHover' : ''}${props.theme ? props.theme : ''}`}> {children} </li>
+    )
+
+    const Content: React.FC = () => (
+        <>
+            {props.title ? <h3 className = "boxTitle"> {props.title} </h3> : props.statusTitle ? (
+                <div className = {`boxTopTitleContainer ${props.theme ? GetContrast(props.theme, 'Box') : ''}`}>
+                    <h3 className = "boxTopTitle"> {props.statusTitle} </h3>
+                </div>
+            ) : null}
+            <div className = "boxContainer" style = {{padding: !props.function && !props.link ? props.padding : 0}}> {props.children} </div> 
+        </>
+    )
 
     return(
 
         <>
             {props.link ? (
-
                 <Tooltip title = "Acessar" arrow>
-                    <li className = {`box boxLink ${props.theme ? props.theme : ''}`}>
+                    <Container>
                         <Link to = {props.link}> 
-                            {props.title ? <h3 className = "boxTitle"> {props.title} </h3> : props.statusTitle ? <div className = "boxTopTitleContainer"><h3 className = "boxTopTitle"> {props.statusTitle} </h3></div> : null}
-                            <div className = "boxContainer"> {props.children} </div> 
+                            <Content /> 
                         </Link>
-                    </li>
+                    </Container>
                 </Tooltip>
-
+            ) : props.function ? (
+                <Container>
+                    <Content />
+                </Container>
             ) : (
-
-                <li className = {`box ${props.theme ? props.theme : ''}`}>
-                    {props.title ? <h3 className = "boxTitle"> {props.title} </h3> : props.statusTitle ? <div className = "boxTopTitleContainer"><h3 className = "boxTopTitle"> {props.statusTitle} </h3></div> : null}
-                    <div className = "boxContainer" style = {{padding: props.padding}}> {props.children} </div>
-                </li>
-
+                <Container>
+                    <Content />
+                </Container>
             )}
+
         </>
 
     )

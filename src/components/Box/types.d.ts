@@ -5,6 +5,7 @@ export type BoxGroupProps = {
 export type BoxProps = {
     key?: string | number,
     link?: string,
+    function?: Function | void | null,
     title?: string,
     statusTitle?: string | number,
     theme?: string,

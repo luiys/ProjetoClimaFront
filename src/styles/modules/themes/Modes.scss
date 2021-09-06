@@ -51,9 +51,9 @@
     --color-divider: #{$color-divider-dm};
 }
 
-#wrapper.dark-mode {
+.dark-mode {
 
-    #homeHeader, .homeBox.color-theme {
+    #homeHeader, .homeBox.color-theme, &.boxTopTitleContainer {
         background-color: var(--color-theme-colors-t) !important;
     }
 
