@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import PageRender from '../../components/PageRender'
+
 import { Theme, ThemeContext } from '../../context/ThemeContext'
+
+import PageRender from '../../components/PageRender'
 import Home from '../../pages/Home'
 import NotFound from '../../pages/NotFound'
 
 const AppRoute: React.FC = () => {
 
+    const [prefers] = useState(window.matchMedia("(prefers-color-scheme: dark)"))
     const [storage] = useState(localStorage.getItem('theme'))
-    const [theme, setTheme] = useState(storage === 'dark-mode' ? Theme.Dark : Theme.Light)
+    const [theme, setTheme] = useState(storage ? storage === 'dark-mode' ? Theme.Dark : Theme.Light : prefers.matches ? Theme.Dark : Theme.Light)
 
     return(
 

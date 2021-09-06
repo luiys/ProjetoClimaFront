@@ -8,9 +8,7 @@ export default function GetContrast(color: string, path: string){
         mode = 'dark-mode'
     }
 
-    let table = {color, path}
-
-    console.table(table)
+    //console.table({color, path})
 
     return mode
 

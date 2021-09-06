@@ -10,10 +10,11 @@ export type ThemeContextProps = {
     setTheme: (Theme: Theme) => void,
 }
 
+let prefers = window.matchMedia("(prefers-color-scheme: dark)")
 let local:string | null = localStorage.getItem('theme')
 
 export const ThemeContext = createContext<ThemeContextProps>({ 
-    theme: local === 'dark-mode' ? Theme.Dark : Theme.Light,
+    theme: local !== null ? (local === 'dark-mode' ? Theme.Dark : Theme.Light) : (prefers.matches ? Theme.Dark : Theme.Light),
     setTheme: () => {},
 })
 
@@ -23,7 +24,7 @@ export const useTheme = () => {
     let storage:string | null = localStorage.getItem('theme')
 
     useEffect(() => {
-        //window.matchMedia("(prefers-color-scheme: dark)").matches
+        //
         storage ? localStorage.setItem('theme', value) : localStorage.setItem('theme', Theme.Light)
     }, [value, storage])  
 
