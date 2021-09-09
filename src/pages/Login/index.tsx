@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { ErrorMessage, Field, Form as FormikContainer, Formik } from 'formik'
 import { useDispatch } from 'react-redux'
 
-import { box, container, SignInSchema } from './constantes'
+import { SignInSchema } from './constantes'
 import logar from './scripts/logar'
 
 import { logIn } from '../../redux/reducers/authReducer'
@@ -53,7 +53,6 @@ const Login: React.FC = () => {
                         </Form.Section>
 
                     </FormikContainer>
-
 
                 </Formik>
             </Form.Box>

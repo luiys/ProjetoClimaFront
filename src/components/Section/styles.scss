@@ -1,6 +1,5 @@
 @import '/src/styles/base/Vars.scss';
 @import '/src/styles/modules/themes/Modes.scss';
-@import '/src/styles/modules/themes/Status.scss';
 @import '/src/styles/modules/themes/Colors.scss';
 
 /*******************************************************
@@ -63,7 +62,7 @@ section {
                     transition: 0.1s ease-in-out;
     
                     &:hover {
-                        color: $color-theme-t-hover;
+                        color: var(--color-txt-p);
                     }
     
                     svg {margin-right: 8px;}

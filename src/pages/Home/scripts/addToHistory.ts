@@ -4,12 +4,23 @@ const addToHistory = (CurrentHistory:HistoryProps[], city: string, current: numb
 
     if(!!city){
 
-        CurrentHistory.length < 3 ? 
-        CurrentHistory.unshift({city,current,max,min}) : 
-        (() => {
-            CurrentHistory.splice(2,1)
+        if(CurrentHistory.some(data => data.city === city)){
+            
+            let i = CurrentHistory.findIndex(data => data.city === city)
+
+            CurrentHistory.splice(i, 1)
             CurrentHistory.unshift({city,current,max,min})
-        })()
+
+        }else{
+
+            CurrentHistory.length < 3 ? 
+            CurrentHistory.unshift({city,current,max,min}) : 
+            (() => {
+                CurrentHistory.splice(2,1)
+                CurrentHistory.unshift({city,current,max,min})
+            })()
+
+        }
 
     }
 

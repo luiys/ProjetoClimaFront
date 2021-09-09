@@ -3,7 +3,7 @@ import { Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
 import { BoxProps } from './../types'
-import GetContrast from '../../../utils/Colors/GetColorContrast'
+import GetContrast from '../../../utils/colors/GetColorContrast'
 
 const Item: React.FC <BoxProps> = props => { 
 

@@ -13,7 +13,7 @@ import Form from '../../components/Form'
 
 const Cadastro: React.FC = () =>  {
 
-    const { redirect } = useAppSelector(state =>  state.cadastro)
+    const { redirect } = useAppSelector(state => state.cadastro)
     const dispatch = useDispatch()
 
     const handleSubmit = useCallback(async (values) =>  {

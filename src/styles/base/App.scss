@@ -45,9 +45,14 @@ a:link, a:active, a:visited, a:hover, a:focus {
 input {
 	border: none;
 	outline: none;
+
+    &:focus {
+        outline: none;
+    }
+
 }
 
-input:focus, select:focus {
+select:focus {
 	outline: none;
 }
 
@@ -103,17 +108,39 @@ button {
 
 }
 
+/*******************************************************
+    Scrollbar - V1
+*******************************************************/
+
+body {
+	overflow: overlay !important;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        border-radius: 6px; 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: rgba(0,0,0,0.4);
+
+        &:hover {
+            background: rgba(0,0,0,0.6); 
+        }
+
+    }     
+
+}
 
 /*******************************************************
-	Elements
+	Elements - V1
 *******************************************************/
 
 html, body, header, main, footer, section {
 	width: 100%;
-}
-
-body {
-	overflow: overlay !important;
 }
 
 #root, #wrapper {
@@ -123,24 +150,3 @@ body {
 #headerContainer, #mainContainer, #footerContainer, .sectionContainer {
     width: 100%;
 }
-
-/*******************************************************
-	Scroll
-*******************************************************/
-
-body::-webkit-scrollbar {
-    width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-    border-radius: 6px; 
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    background: rgba(0,0,0,0.4); 
-}
-
-    body::-webkit-scrollbar-thumb:hover {
-        background: rgba(0,0,0,0.6); 
-    }

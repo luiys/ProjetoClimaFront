@@ -1,5 +1,5 @@
 import React from "react"
-import GetContrast from "../../../../../utils/Colors/GetColorContrast"
+import GetContrast from "../../../../../utils/colors/GetColorContrast"
 
 import { ContainerProps } from "../types"
 

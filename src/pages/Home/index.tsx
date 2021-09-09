@@ -38,7 +38,7 @@ const Home: React.FC = ()  => {
         getWheater(searchRef.current?.value!, dispatch)
     }, [dispatch])
 
-    try {
+    try{
 
         R.SHOW_DATA && !R.SHOW_ERROR && addToHistory(HistoryData, searchRef.current?.value!, data!.main.temp, data!.main.temp_max, data!.main.temp_min)
 
@@ -121,7 +121,7 @@ const Home: React.FC = ()  => {
 
         )
 
-    } catch (error) {
+    }catch(error){
         console.log('erro na home', error)
         return <h1>Erro na home</h1>
     }

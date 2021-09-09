@@ -1,4 +1,4 @@
-import { ColorsTheme } from "./Colors/ColorsThemes"
+import { ColorsTheme } from "./colors/ColorsThemes"
 import GetRandomInt from "./GetRandomInt"
 
 export default function GetColorTheme(color: string | undefined, currentColor: string | undefined){

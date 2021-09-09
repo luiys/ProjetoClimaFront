@@ -12,6 +12,3 @@ export const mockUsers : User[] = [
     {id: 3, nome: 'Pedro', email:'pedro@gmail.com', senha: '123'},
     {id: 4, nome: 'Luis Gustavo', email: 'lg@gmail.com', senha: '123'},
 ]
-
-export const container = { width: `100vw`, height: '100vh' }
-export const box = { width: `100%`, height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }
