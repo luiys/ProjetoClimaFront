@@ -9,7 +9,7 @@ export default function GetColorTheme(color: string | undefined, currentColor: s
 
         do{
             colorIndex = GetRandomInt(0, ColorsTheme.length)
-        }while(ColorsTheme[colorIndex] === currentColor)
+        }while(ColorsTheme[colorIndex] === currentColor)  
 
         return ColorsTheme[colorIndex]
 
