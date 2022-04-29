@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AsyncGetPattern } from '../types/types'
 import { Wheater } from '../types/wheaterApi'
 
-
 export interface HomeState {
     apiData: AsyncGetPattern<Wheater>
 }
